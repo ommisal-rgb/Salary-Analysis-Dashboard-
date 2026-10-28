@@ -1,0 +1,101 @@
+Employee_ID,Work_Year,Experience_Level,Employment_Type,Job_Title,Salary,Salary_Currency,Salary_in_USD,Employee_Residence,Remote_Ratio,Company_Location,Company_Size,Department,Education_Level
+EMP0001,2024,SE,FT,AI Architect,215000,USD,215000,United States,100,United States,L,Machine Learning & AI,Master's
+EMP0002,2024,SE,FT,Data Scientist,165000,USD,165000,United States,50,United States,M,Data & Analytics,Master's
+EMP0003,2024,MI,FT,Data Analyst,95000,USD,95000,United States,0,United States,M,Data & Analytics,Bachelor's
+EMP0004,2024,EX,FT,Data Science Manager,240000,USD,240000,United States,100,United States,L,Data & Analytics,Master's
+EMP0005,2024,SE,FT,Machine Learning Engineer,185000,USD,185000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0006,2024,MI,FT,Data Engineer,125000,USD,125000,United States,50,United States,L,Data Engineering,Bachelor's
+EMP0007,2024,EN,FT,Data Analyst,68000,USD,68000,United States,0,United States,S,Data & Analytics,Bachelor's
+EMP0008,2024,SE,FT,BI Developer,138000,USD,138000,United States,100,United States,M,Business Intelligence,Bachelor's
+EMP0009,2024,EX,FT,AI Architect,280000,USD,280000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0010,2024,MI,FT,Analytics Engineer,115000,GBP,146000,United Kingdom,50,United Kingdom,M,Data & Analytics,Master's
+EMP0011,2024,SE,FT,Data Architect,195000,USD,195000,United States,100,United States,L,Data Engineering,Master's
+EMP0012,2024,EN,FT,Machine Learning Engineer,88000,USD,88000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0013,2024,SE,FT,Research Scientist,205000,USD,205000,United States,0,United States,L,Machine Learning & AI,Doctorate
+EMP0014,2024,MI,FT,BI Analyst,92000,EUR,100000,Germany,50,Germany,M,Business Intelligence,Master's
+EMP0015,2024,SE,FT,Tech Lead,178000,USD,178000,United States,100,United States,M,Enterprise Software,Master's
+EMP0016,2024,EN,FT,Data Engineer,75000,CAD,55500,Canada,0,Canada,M,Data Engineering,Bachelor's
+EMP0017,2024,SE,FT,Solutions Architect,172000,USD,172000,United States,100,United States,L,Enterprise Software,Master's
+EMP0018,2024,EX,FT,Analytics Manager,210000,USD,210000,United States,50,United States,L,Data & Analytics,Master's
+EMP0019,2024,MI,FT,Data Scientist,132000,USD,132000,United States,100,United States,M,Data & Analytics,Master's
+EMP0020,2024,EN,FT,BI Developer,62000,USD,62000,United States,0,United States,S,Business Intelligence,Bachelor's
+EMP0021,2023,SE,FT,AI Architect,198000,USD,198000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0022,2023,SE,FT,Data Scientist,152000,USD,152000,United States,50,United States,M,Data & Analytics,Master's
+EMP0023,2023,MI,FT,Data Analyst,88000,USD,88000,United States,0,United States,M,Data & Analytics,Bachelor's
+EMP0024,2023,EX,FT,Data Science Manager,225000,USD,225000,United States,100,United States,L,Data & Analytics,Master's
+EMP0025,2023,SE,FT,Machine Learning Engineer,170000,USD,170000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0026,2023,MI,FT,Data Engineer,115000,USD,115000,United States,50,United States,L,Data Engineering,Bachelor's
+EMP0027,2023,EN,FT,Data Analyst,62000,USD,62000,United States,0,United States,S,Data & Analytics,Bachelor's
+EMP0028,2023,SE,FT,BI Developer,128000,USD,128000,United States,100,United States,M,Business Intelligence,Bachelor's
+EMP0029,2023,EX,FT,AI Architect,260000,USD,260000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0030,2023,MI,FT,Analytics Engineer,105000,GBP,133000,United Kingdom,50,United Kingdom,M,Data & Analytics,Master's
+EMP0031,2023,SE,FT,Data Architect,180000,USD,180000,United States,100,United States,L,Data Engineering,Master's
+EMP0032,2023,EN,FT,Machine Learning Engineer,82000,USD,82000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0033,2023,SE,FT,Research Scientist,190000,USD,190000,United States,0,United States,L,Machine Learning & AI,Doctorate
+EMP0034,2023,MI,FT,BI Analyst,85000,EUR,92500,Germany,50,Germany,M,Business Intelligence,Master's
+EMP0035,2023,SE,FT,Tech Lead,165000,USD,165000,United States,100,United States,M,Enterprise Software,Master's
+EMP0036,2023,EN,FT,Data Engineer,70000,INR,34000,India,0,India,M,Data Engineering,Bachelor's
+EMP0037,2023,SE,FT,Solutions Architect,160000,USD,160000,United States,100,United States,L,Enterprise Software,Master's
+EMP0038,2023,EX,FT,Analytics Manager,195000,USD,195000,United States,50,United States,L,Data & Analytics,Master's
+EMP0039,2023,MI,FT,Data Scientist,122000,USD,122000,United States,100,United States,M,Data & Analytics,Master's
+EMP0040,2023,EN,FT,BI Developer,58000,USD,58000,United States,0,United States,S,Business Intelligence,Bachelor's
+EMP0041,2022,SE,FT,AI Architect,185000,USD,185000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0042,2022,SE,FT,Data Scientist,142000,USD,142000,United States,50,United States,M,Data & Analytics,Master's
+EMP0043,2022,MI,FT,Data Analyst,82000,USD,82000,United States,0,United States,M,Data & Analytics,Bachelor's
+EMP0044,2022,EX,FT,Data Science Manager,210000,USD,210000,United States,100,United States,L,Data & Analytics,Master's
+EMP0045,2022,SE,FT,Machine Learning Engineer,158000,USD,158000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0046,2022,MI,FT,Data Engineer,108000,USD,108000,United States,50,United States,L,Data Engineering,Bachelor's
+EMP0047,2022,EN,FT,Data Analyst,58000,USD,58000,United States,0,United States,S,Data & Analytics,Bachelor's
+EMP0048,2022,SE,FT,BI Developer,118000,USD,118000,United States,100,United States,M,Business Intelligence,Bachelor's
+EMP0049,2022,EX,FT,AI Architect,242000,USD,242000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0050,2022,MI,FT,Analytics Engineer,98000,GBP,124000,United Kingdom,50,United Kingdom,M,Data & Analytics,Master's
+EMP0051,2022,SE,FT,Data Architect,168000,USD,168000,United States,100,United States,L,Data Engineering,Master's
+EMP0052,2022,EN,FT,Machine Learning Engineer,76000,USD,76000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0053,2022,SE,FT,Research Scientist,178000,USD,178000,United States,0,United States,L,Machine Learning & AI,Doctorate
+EMP0054,2022,MI,FT,BI Analyst,78000,EUR,85000,Germany,50,Germany,M,Business Intelligence,Master's
+EMP0055,2022,SE,FT,Tech Lead,154000,USD,154000,United States,100,United States,M,Enterprise Software,Master's
+EMP0056,2022,EN,FT,Data Engineer,65000,INR,31000,India,0,India,M,Data Engineering,Bachelor's
+EMP0057,2022,SE,FT,Solutions Architect,150000,USD,150000,United States,100,United States,L,Enterprise Software,Master's
+EMP0058,2022,EX,FT,Analytics Manager,182000,USD,182000,United States,50,United States,L,Data & Analytics,Master's
+EMP0059,2022,MI,FT,Data Scientist,114000,USD,114000,United States,100,United States,M,Data & Analytics,Master's
+EMP0060,2022,EN,FT,BI Developer,54000,USD,54000,United States,0,United States,S,Business Intelligence,Bachelor's
+EMP0061,2021,SE,FT,AI Architect,172000,USD,172000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0062,2021,SE,FT,Data Scientist,130000,USD,130000,United States,50,United States,M,Data & Analytics,Master's
+EMP0063,2021,MI,FT,Data Analyst,75000,USD,75000,United States,0,United States,M,Data & Analytics,Bachelor's
+EMP0064,2021,EX,FT,Data Science Manager,195000,USD,195000,United States,100,United States,L,Data & Analytics,Master's
+EMP0065,2021,SE,FT,Machine Learning Engineer,145000,USD,145000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0066,2021,MI,FT,Data Engineer,98000,USD,98000,United States,50,United States,L,Data Engineering,Bachelor's
+EMP0067,2021,EN,FT,Data Analyst,52000,USD,52000,United States,0,United States,S,Data & Analytics,Bachelor's
+EMP0068,2021,SE,FT,BI Developer,108000,USD,108000,United States,100,United States,M,Business Intelligence,Bachelor's
+EMP0069,2021,EX,FT,AI Architect,225000,USD,225000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0070,2021,MI,FT,Analytics Engineer,90000,GBP,114000,United Kingdom,50,United Kingdom,M,Data & Analytics,Master's
+EMP0071,2024,SE,FT,Data Engineer,162000,USD,162000,United States,100,United States,M,Data Engineering,Bachelor's
+EMP0072,2024,MI,FT,Data Scientist,140000,USD,140000,United States,100,United States,L,Data & Analytics,Master's
+EMP0073,2024,SE,FT,Machine Learning Engineer,192000,USD,192000,United States,100,United States,L,Machine Learning & AI,Master's
+EMP0074,2024,EN,FT,Data Analyst,72000,USD,72000,United States,50,United States,M,Data & Analytics,Bachelor's
+EMP0075,2024,SE,FT,AI Architect,228000,USD,228000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0076,2024,MI,FT,BI Developer,112000,USD,112000,United States,0,United States,M,Business Intelligence,Bachelor's
+EMP0077,2024,SE,FT,Cloud Architect,188000,USD,188000,United States,100,United States,L,Enterprise Software,Master's
+EMP0078,2024,EX,FT,Data Science Manager,255000,USD,255000,United States,100,United States,L,Data & Analytics,Master's
+EMP0079,2024,MI,FT,ETL Developer,96000,USD,96000,United States,50,United States,S,Data Engineering,Bachelor's
+EMP0080,2024,SE,FT,Research Scientist,212000,USD,212000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0081,2024,MI,FT,Data Scientist,118000,EUR,128000,Germany,100,Germany,M,Data & Analytics,Master's
+EMP0082,2024,SE,FT,Data Architect,198000,USD,198000,United States,50,United States,L,Data Engineering,Master's
+EMP0083,2024,EN,FT,Analytics Engineer,84000,USD,84000,United States,100,United States,M,Data & Analytics,Bachelor's
+EMP0084,2024,SE,FT,Solutions Architect,176000,USD,176000,United States,100,United States,L,Enterprise Software,Master's
+EMP0085,2024,EX,FT,AI Architect,295000,USD,295000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0086,2024,MI,FT,Data Engineer,102000,GBP,129000,United Kingdom,100,United Kingdom,M,Data Engineering,Master's
+EMP0087,2024,SE,FT,Tech Lead,182000,USD,182000,United States,50,United States,M,Enterprise Software,Master's
+EMP0088,2024,EN,FT,Data Analyst,66000,AUD,44000,Australia,0,Australia,S,Data & Analytics,Bachelor's
+EMP0089,2024,SE,FT,BI Manager,165000,USD,165000,United States,100,United States,L,Business Intelligence,Master's
+EMP0090,2024,MI,FT,ML Ops Engineer,142000,USD,142000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0091,2023,SE,FT,Data Scientist,158000,USD,158000,United States,100,United States,L,Data & Analytics,Master's
+EMP0092,2023,MI,FT,Data Engineer,118000,USD,118000,United States,50,United States,M,Data Engineering,Bachelor's
+EMP0093,2023,SE,FT,AI Architect,210000,USD,210000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0094,2023,EN,FT,Data Analyst,64000,USD,64000,United States,0,United States,S,Data & Analytics,Bachelor's
+EMP0095,2023,SE,FT,Machine Learning Engineer,178000,USD,178000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0096,2023,EX,FT,Data Science Manager,235000,USD,235000,United States,100,United States,L,Data & Analytics,Master's
+EMP0097,2023,MI,FT,BI Developer,104000,USD,104000,United States,50,United States,M,Business Intelligence,Bachelor's
+EMP0098,2023,SE,FT,Research Scientist,198000,USD,198000,United States,100,United States,L,Machine Learning & AI,Doctorate
+EMP0099,2023,EN,FT,Machine Learning Engineer,84000,USD,84000,United States,100,United States,M,Machine Learning & AI,Master's
+EMP0100,2023,SE,FT,Cloud Architect,175000,USD,175000,United States,100,United States,L,Enterprise Software,Master's

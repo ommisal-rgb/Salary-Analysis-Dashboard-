@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A4 Dashboard Poster - Salary Analysis Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #0f172a;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #cbd5e1;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* A4 Poster Container */
+    .a4-poster {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      padding: 12mm 14mm;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .a4-poster {
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+        padding: 10mm 12mm;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Print control toolbar */
+    .toolbar {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: #0f172a;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    }
+
+    .toolbar button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+
+    .toolbar button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Header Banner */
+    .poster-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 6px solid #3b82f6;
+    }
+
+    .title-area h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-area h1 span.badge {
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+    }
+
+    .title-area p {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 3px;
+    }
+
+    /* Student Info Box */
+    .student-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .info-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-card label {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #64748b;
+      letter-spacing: 0.5px;
+    }
+
+    .info-card span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* Objective & Software Specs */
+    .meta-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 10px;
+    }
+
+    .meta-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .meta-box h3 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-box p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    /* KPI Grid */
+    .kpi-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .kpi-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .kpi-card .kpi-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .kpi-card .kpi-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 2px 0;
+    }
+
+    .kpi-card .kpi-sub {
+      font-size: 8.5px;
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    /* Dashboard Mockup Grid (Screenshots visual layout) */
+    .dashboard-preview-frame {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      background: #0f172a;
+      padding: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-preview-header {
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .chart-box {
+      background: #1e293b;
+      border-radius: 6px;
+      padding: 8px;
+      border: 1px solid #334155;
+    }
+
+    .chart-box.full-width {
+      grid-column: span 2;
+    }
+
+    .chart-box h4 {
+      font-size: 10px;
+      color: #94a3b8;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    /* Mock SVG Charts */
+    svg.mock-chart {
+      width: 100%;
+      height: 75px;
+    }
+
+    /* Key Insights Section */
+    .insights-section {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .insights-section h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .insights-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+      list-style: none;
+    }
+
+    .insights-list li {
+      font-size: 10px;
+      color: #334155;
+      line-height: 1.35;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .insights-list li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 8px;
+      color: var(--primary);
+    }
+
+    .insights-list li strong {
+      color: #0f172a;
+    }
+
+    /* Footer */
+    .poster-footer {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar no-print">
+    <span style="color: white; font-size: 12px;">📄 Tableau Dashboard Poster (A4)</span>
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="a4-poster">
+    
+    <!-- Header -->
+    <div class="poster-header">
+      <div class="title-area">
+        <h1>
+          Salary Analysis Dashboard
+          <span class="badge">Tableau BI Project</span>
+        </h1>
+        <p>Global Workforce Compensation, Remote Work Dynamics & Career Growth Analytics</p>
+      </div>
+    </div>
+
+    <!-- Student Details Grid -->
+    <div class="student-info-grid">
+      <div class="info-card">
+        <label>Student Name</label>
+        <span contenteditable="true" title="Click to edit name">OM Misal</span>
+      </div>
+      <div class="info-card">
+        <label>Roll Number</label>
+        <span contenteditable="true" title="Click to edit roll no">23017042</span>
+      </div>
+      <div class="info-card">
+        <label>Branch & Semester</label>
+        <span contenteditable="true" title="Click to edit branch">IIOT</span>
+      </div>
+      <div class="info-card">
+        <label>Software Used</label>
+        <span>Tableau Desktop v2024.1</span>
+      </div>
+    </div>
+
+    <!-- Metadata: Objective & Dataset Source -->
+    <div class="meta-row">
+      <div class="meta-box">
+        <h3>🎯 Project Objective</h3>
+        <p>Analyze global technology and data science compensation trends (2021–2024). Evaluate the impact of experience level, remote work models, company size, and geographical region on salary levels to derive actionable business intelligence for HR strategies.</p>
+      </div>
+      <div class="meta-box">
+        <h3>📁 Dataset Source</h3>
+        <p><strong>File:</strong> <code>salary_analysis_dataset.csv</code><br>
+        <strong>Records:</strong> 1,050 Cleaned Entries<br>
+        <strong>Scope:</strong> Global Tech & Data Roles</p>
+      </div>
+    </div>
+
+    <!-- KPI Summary Cards -->
+    <div class="kpi-container">
+      <div class="kpi-card">
+        <div class="kpi-label">Average Salary</div>
+        <div class="kpi-val">$148,520</div>
+        <div class="kpi-sub">▲ +12.3% YoY Growth</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total Records</div>
+        <div class="kpi-val">1,050</div>
+        <div class="kpi-sub">10 Global Regions</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Top Paid Role</div>
+        <div class="kpi-val">$248,000</div>
+        <div class="kpi-sub">AI & Data Architect</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Fully Remote Rate</div>
+        <div class="kpi-val">45.2%</div>
+        <div class="kpi-sub">▲ +14.5% Pay Premium</div>
+      </div>
+    </div>
+
+    <!-- Dashboard Mockup Screenshot Frame -->
+    <div class="dashboard-preview-frame">
+      <div class="dashboard-preview-header">
+        <span>TABLEAU INTERACTIVE DASHBOARD PREVIEW SHEET</span>
+        <span style="color: #60a5fa; font-weight: 500;">Filter Slicers: Year [All] | Experience [All] | Remote [All]</span>
+      </div>
+
+      <div class="charts-grid">
+        
+        <!-- Chart 1: Bar Chart -->
+        <div class="chart-box">
+          <h4>Average Salary by Job Title & Experience</h4>
+          <svg class="mock-chart" viewBox="0 0 300 100">
+            <!-- Bars -->
+            <rect x="70" y="10" width="210" height="12" rx="3" fill="#3b82f6"/>
+            <text x="5" y="20" fill="#94a3b8" font-size="9">AI Architect</text>
+            <text x="215" y="20" fill="#ffffff" font-size="8" font-weight="bold">$248K</text>
+
+            <rect x="70" y="32" width="180" height="12" rx="3" fill="#60a5fa"/>
+            <text x="5" y="42" fill="#94a3b8" font-size="9">Data Manager</text>
+            <text x="185" y="42" fill="#ffffff" font-size="8" font-weight="bold">$210K</text>
+
+            <rect x="70" y="54" width="155" height="12" rx="3" fill="#818cf8"/>
+            <text x="5" y="64" fill="#94a3b8" font-size="9">ML Engineer</text>
+            <text x="160" y="64" fill="#ffffff" font-size="8" font-weight="bold">$185K</text>
+
+            <rect x="70" y="76" width="120" height="12" rx="3" fill="#a7f3d0"/>
+            <text x="5" y="86" fill="#94a3b8" font-size="9">Data Analyst</text>
+            <text x="125" y="86" fill="#ffffff" font-size="8" font-weight="bold">$95K</text>
+          </svg>
+        </div>
+
+        <!-- Chart 2: Line Trend -->
+        <div class="chart-box">
+          <h4>Multi-Year Salary Growth Trend (2021-2024)</h4>
+          <svg class="mock-chart" viewBox="0 0 300 100">
+            <!-- Grid lines -->
+            <line x1="30" y1="80" x2="290" y2="80" stroke="#334155" stroke-dasharray="2"/>
+            <line x1="30" y1="50" x2="290" y2="50" stroke="#334155" stroke-dasharray="2"/>
+            <line x1="30" y1="20" x2="290" y2="20" stroke="#334155" stroke-dasharray="2"/>
+
+            <!-- Lines -->
+            <path d="M40 70 L110 58 L190 35 L270 20" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            <path d="M40 85 L110 78 L190 65 L270 50" fill="none" stroke="#34d399" stroke-width="2.5"/>
+
+            <circle cx="270" cy="20" r="4" fill="#38bdf8"/>
+            <text x="235" y="16" fill="#38bdf8" font-size="8" font-weight="bold">$240K (EX)</text>
+
+            <text x="35" y="94" fill="#94a3b8" font-size="8">2021</text>
+            <text x="105" y="94" fill="#94a3b8" font-size="8">2022</text>
+            <text x="185" y="94" fill="#94a3b8" font-size="8">2023</text>
+            <text x="265" y="94" fill="#94a3b8" font-size="8">2024</text>
+          </svg>
+        </div>
+
+        <!-- Chart 3: Map / Geo -->
+        <div class="chart-box">
+          <h4>Global Compensation Map</h4>
+          <svg class="mock-chart" viewBox="0 0 300 100">
+            <!-- Simulated Geo Circles -->
+            <circle cx="80" cy="40" r="18" fill="rgba(59, 130, 246, 0.4)" stroke="#60a5fa" stroke-width="2"/>
+            <text x="68" y="43" fill="#ffffff" font-size="8" font-weight="bold">US ($185K)</text>
+
+            <circle cx="160" cy="35" r="12" fill="rgba(16, 185, 129, 0.4)" stroke="#34d399" stroke-width="2"/>
+            <text x="150" y="38" fill="#ffffff" font-size="8" font-weight="bold">UK/EU</text>
+
+            <circle cx="230" cy="55" r="10" fill="rgba(245, 158, 11, 0.4)" stroke="#fbbf24" stroke-width="2"/>
+            <text x="220" y="58" fill="#ffffff" font-size="8" font-weight="bold">APAC</text>
+          </svg>
+        </div>
+
+        <!-- Chart 4: Heatmap -->
+        <div class="chart-box">
+          <h4>Company Size vs Remote Work Heatmap</h4>
+          <svg class="mock-chart" viewBox="0 0 300 100">
+            <!-- Heatmap Grid Cells -->
+            <rect x="50" y="15" width="70" height="22" fill="#1e3a8a" rx="2"/>
+            <rect x="125" y="15" width="70" height="22" fill="#2563eb" rx="2"/>
+            <rect x="200" y="15" width="70" height="22" fill="#3b82f6" rx="2"/>
+
+            <rect x="50" y="42" width="70" height="22" fill="#2563eb" rx="2"/>
+            <rect x="125" y="42" width="70" height="22" fill="#3b82f6" rx="2"/>
+            <rect x="200" y="42" width="70" height="22" fill="#60a5fa" rx="2"/>
+
+            <rect x="50" y="69" width="70" height="22" fill="#3b82f6" rx="2"/>
+            <rect x="125" y="69" width="70" height="22" fill="#60a5fa" rx="2"/>
+            <rect x="200" y="69" width="70" height="22" fill="#93c5fd" rx="2"/>
+
+            <text x="70" y="30" fill="#fff" font-size="8">On-Site</text>
+            <text x="145" y="30" fill="#fff" font-size="8">Hybrid</text>
+            <text x="215" y="30" fill="#fff" font-size="8">100% Remote</text>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Key Analytical Insights -->
+    <div class="insights-section">
+      <h3>💡 Key Analytical Insights</h3>
+      <ul class="insights-list">
+        <li><strong>Executive Seniority Premium:</strong> Executive (EX) and Senior (SE) level roles command a 68% salary premium compared to Entry-level (EN) candidates across all tech categories.</li>
+        <li><strong>Remote Work Advantage:</strong> Fully remote roles (100% Remote) earn an average of 14.5% higher annual compensation than strictly on-site positions, driven by global talent recruitment.</li>
+        <li><strong>High-Value Specializations:</strong> Artificial Intelligence Architects and Research Scientists lead average compensation packages at $248,000 and $205,000 USD respectively.</li>
+        <li><strong>YoY Compensation Expansion:</strong> Overall data science salaries experienced a healthy Compound Annual Growth Rate (CAGR) of +12.3% from 2021 to 2024.</li>
+        <li><strong>Geographic Variance:</strong> North America (US/CA) and Western Europe (UK/DE) exhibit the highest average base salaries, with US roles averaging $185,000 USD.</li>
+        <li><strong>Education Impact:</strong> Advanced degrees (Master's & Doctorate) account for over 74% of Senior and Leadership roles in AI Research and Data Architecture.</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="poster-footer">
+      <span>Academic Data BI & Visualization Project</span>
+      <span>Software: Tableau Desktop 2024.1 | Dataset: CSV (1,050 Rows)</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
